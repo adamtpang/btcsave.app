@@ -4,160 +4,18 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Company OS</title>
+<link rel="stylesheet" href="company-os.css" />
+<script src="company-os.core.js"></script>
 <script src="company-os.data.js"></script>
-<style>
-  :root{
-    --bg:#0a0b0d; --panel:#121419; --panel2:#0e1014; --line:#23262d;
-    --ink:#e7eaed; --mut:#8a909a; --accent:#e7eaed; --accentSoft:#1a1d23;
-    --green:#36c08a; --amber:#e7b24a; --danger:#d64545;
-    --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
-    --disp:'Bodoni Moda',Georgia,serif;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Hanken Grotesk',-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:inherit}
-  .wrap{max-width:1000px;margin:0 auto;padding:24px 20px 64px}
-  .tnum{font-variant-numeric:tabular-nums}
-  .mono{font-family:var(--mono)}
-  .disp{font-family:var(--disp)}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}
-  .row{display:grid;gap:12px}
-  @media(min-width:760px){.c3{grid-template-columns:repeat(3,1fr)}.c2{grid-template-columns:1fr 1fr}}
-  .h{font-size:12.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.1em;margin:26px 0 12px}
-  .flex{display:flex;align-items:center}
-  .between{justify-content:space-between}
-  .bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
-  .barfill{height:100%}
-  .chip{font-size:11px;font-weight:700;padding:3px 9px;border-radius:99px;border:1px solid}
-  .ck{width:18px;height:18px;border-radius:6px;border:1px solid var(--line);display:grid;place-items:center;flex:0 0 auto}
-  .muted{color:var(--mut)}
-  .small{font-size:12px}
-  .kb{display:block;padding:11px 14px;border:1px solid var(--line);border-radius:12px;text-decoration:none;margin-bottom:8px;background:var(--panel2)}
-  .kb:hover{border-color:var(--mut)}
-</style>
 </head>
 <body>
-<div class="wrap" id="app"></div>
+<div id="app" class="cos"></div>
 <script>
-(function(){
-  var d = window.COMPANY_OS;
-  var app = document.getElementById('app');
-  if(!d){ app.innerHTML = '<p style="color:#d64545">company-os.data.js not found.</p>'; return; }
-
-  var TIERS = d.levels || [[0,'Day 1'],[1,'Founder'],[6,'Builder'],[13,'Operator'],[21,'Captain'],[30,'CEO']];
-  var fmt = function(n){ return '$' + Math.round(Number(n)||0).toLocaleString('en-US'); };
-  var esc = function(s){ return String(s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); };
-
-  // level
-  var total=0, done=0;
-  d.roadmap.forEach(function(st){ st.items.forEach(function(it){ total++; if(it.done) done++; }); });
-  var tier = TIERS.slice().reverse().find(function(t){return done>=t[0];})||TIERS[0];
-  var nextT = TIERS.find(function(t){return t[0]>done;});
-  var xp = Math.min(100, ((done - tier[0]) / Math.max(1,(nextT?nextT[0]:total)-tier[0]))*100);
-
-  // money
-  var f=d.finances, burn=f.expenses-f.income, prof=burn<=0, runway=prof?Infinity:f.savings/burn;
-  var rc = prof||runway>=12?'var(--green)':runway>=6?'var(--amber)':'var(--danger)';
-  var rp = prof?100:Math.min(100,(runway/18)*100);
-
-  function spark(arr, color){
-    if(!arr || arr.length<2) return '<div class="muted small" style="height:60px;display:grid;place-items:center">Log two or more weeks to see the trend.</div>';
-    var w=260,h=60,max=Math.max.apply(null,arr),min=Math.min.apply(null,arr);
-    var rng=(max-min)||1;
-    var pts=arr.map(function(v,i){ var x=(i/(arr.length-1))*w; var y=h-((v-min)/rng)*(h-8)-4; return x.toFixed(1)+','+y.toFixed(1); }).join(' ');
-    return '<svg width="100%" viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none" style="height:60px"><polyline fill="none" stroke="'+color+'" stroke-width="2" points="'+pts+'"/></svg>';
-  }
-  var hist = d.history||[];
-  var charts = d.charts || [
-    {label:'Waitlist growth', key:'waitlist', color:'var(--amber)'},
-    {label:'Cash on hand', key:'savings', color:'var(--green)'}
-  ];
-
-  function tone(s){ return s==='Live'?'var(--green)':(s==='Building'||s==='Next')?'var(--amber)':'var(--mut)'; }
-
-  var html = '';
-  // header
-  html += '<div class="card flex between" style="padding:20px;flex-wrap:wrap;gap:14px">'
-    + '<div><div class="mono small muted" style="letter-spacing:.1em;text-transform:uppercase">'+esc(d.company)+' · founder level</div>'
-    + '<div class="disp" style="font-size:26px;font-weight:800">'+esc(tier[1])+'</div>'
-    + '<div class="muted small">'+esc(d.tagline||'')+'</div></div>'
-    + '<div class="flex" style="gap:8px;border:1px solid var(--line);border-radius:12px;padding:10px 16px;background:var(--panel2)">'
-    + '<span style="font-size:20px">🔥</span><span class="disp tnum" style="font-size:22px;font-weight:800">'+ (d.streak||0) +'</span><span class="muted small">day streak</span></div>'
-    + '</div>';
-  html += '<div style="margin-top:12px"><div class="flex between small muted" style="margin-bottom:5px"><span>'+done+' of '+total+' milestones</span><span>'+(nextT?'next: '+nextT[1]:'max level')+'</span></div><div class="bar"><div class="barfill" style="width:'+xp+'%;background:var(--amber)"></div></div></div>';
-
-  // money
-  html += '<div class="h">Money</div><div class="row c3">';
-  [['Income / mo',f.income],['Expenses / mo',f.expenses],['Savings',f.savings]].forEach(function(p){
-    html += '<div class="card"><div class="muted small" style="margin-bottom:6px">'+p[0]+'</div><div class="disp tnum" style="font-size:22px;font-weight:800">'+fmt(p[1])+'</div></div>';
-  });
-  html += '</div><div class="row c2" style="margin-top:12px">'
-    + '<div class="card flex between"><span class="muted small">Net burn / mo</span><span class="disp tnum" style="font-size:18px;font-weight:800;color:'+(prof?'var(--green)':'var(--ink)')+'">'+(prof?'profitable':fmt(burn))+'</span></div>'
-    + '<div class="card"><div class="flex between" style="margin-bottom:8px"><span class="muted small">Runway</span><span class="disp tnum" style="font-size:18px;font-weight:800;color:'+rc+'">'+(prof?'infinite':runway.toFixed(1)+' mo')+'</span></div><div class="bar"><div class="barfill" style="width:'+rp+'%;background:'+rc+'"></div></div><div class="muted small" style="margin-top:6px">target: 18 months</div></div>'
-    + '</div>';
-
-  // trends
-  html += '<div class="h">Trends</div><div class="row c2">';
-  charts.forEach(function(c){
-    var series = hist.map(function(x){return x[c.key];});
-    html += '<div class="card"><div class="muted small" style="margin-bottom:8px">'+esc(c.label)+'</div>'+spark(series, c.color||'var(--amber)')+'</div>';
-  });
-  html += '</div>';
-
-  // north star + inputs (metrics is an array of {label, value, hint})
-  html += '<div class="h">North star and weekly inputs</div><div class="row c3">';
-  (d.metrics||[]).forEach(function(m){
-    html += '<div class="card"><div class="flex between" style="margin-bottom:6px"><span class="muted small">'+esc(m.label)+'</span><span class="mono small muted">'+esc(m.hint||'')+'</span></div><div class="disp tnum" style="font-size:22px;font-weight:800">'+(m.value||0)+'</div></div>';
-  });
-  html += '</div>';
-
-  // goals
-  html += '<div class="h">Quarterly goals</div><div class="card">';
-  d.goals.forEach(function(g){
-    html += '<div class="flex" style="gap:10px;margin-bottom:9px"><span class="ck" style="border-color:'+(g.done?'var(--green)':'var(--line)')+';background:'+(g.done?'var(--green)':'transparent')+'">'+(g.done?'✓':'')+'</span><span style="'+(g.done?'color:var(--mut);text-decoration:line-through':'')+'">'+esc(g.text)+'</span></div>';
-  });
-  html += '</div>';
-
-  // problem + products
-  html += '<div class="row c2" style="margin-top:8px"><div><div class="h">The problem</div><div class="card">'+esc(d.problem)+'</div></div>'
-    + '<div><div class="h">Products</div><div class="card">';
-  d.products.forEach(function(p){
-    html += '<div class="flex between" style="margin-bottom:9px"><span style="font-weight:600;font-size:13.5px">'+esc(p.name)+'</span><span class="chip" style="color:'+tone(p.status)+';border-color:'+tone(p.status)+'">'+esc(p.status)+'</span></div>';
-  });
-  html += '</div></div></div>';
-
-  // roadmap
-  html += '<div class="h">The roadmap</div><div class="row">';
-  d.roadmap.forEach(function(st){
-    var sd=st.items.filter(function(i){return i.done;}).length, pct=Math.round((sd/st.items.length)*100);
-    html += '<div class="card"><div class="flex between" style="margin-bottom:10px"><span class="disp" style="font-weight:700;font-size:15px">'+esc(st.stage)+'</span><span class="mono tnum small" style="color:'+(pct===100?'var(--green)':'var(--mut)')+'">'+sd+'/'+st.items.length+'</span></div>'
-      + '<div class="bar" style="height:6px;margin-bottom:12px"><div class="barfill" style="width:'+pct+'%;background:'+(pct===100?'var(--green)':'var(--amber)')+'"></div></div>';
-    st.items.forEach(function(it){
-      html += '<div class="flex" style="gap:9px;margin-bottom:7px"><span class="ck" style="border-color:'+(it.done?'var(--green)':'var(--line)')+';background:'+(it.done?'var(--green)':'transparent')+'">'+(it.done?'✓':'')+'</span><span class="small" style="'+(it.done?'color:var(--mut);text-decoration:line-through':'')+'">'+esc(it.label)+'</span></div>';
-    });
-    html += '</div>';
-  });
-  html += '</div>';
-
-  // org
-  html += '<div class="h">Org chart</div><div class="row c3">';
-  d.org.forEach(function(o){
-    html += '<div class="card"><div class="disp" style="font-weight:700;font-size:14.5px;margin-bottom:6px">'+esc(o.fn)+'</div><div class="muted small">Now: <span style="color:var(--ink)">'+esc(o.now)+'</span></div><div class="muted small" style="margin-top:2px">Next hire: '+esc(o.next)+'</div></div>';
-  });
-  html += '</div>';
-
-  // knowledge base
-  html += '<div class="h">Knowledge base (this codebase)</div><div class="card">';
-  html += '<div class="muted small" style="margin-bottom:10px">The company OS is tied to the repo. These context files are the source of truth that Claude reads and updates.</div>';
-  d.knowledgeBase.forEach(function(k){
-    html += '<a class="kb" href="../'+esc(k.file)+'"><span class="mono" style="color:var(--amber)">'+esc(k.file)+'</span> <span class="muted small">'+esc(k.desc)+'</span></a>';
-  });
-  html += '</div>';
-
-  html += '<div class="muted small" style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line)">Read-only view. Source of truth is <span class="mono">company-os.data.js</span>, kept in sync with the context files. To update, edit that file or ask Claude (log a week, check off a milestone, update a metric), then refresh.</div>';
-
-  app.innerHTML = html;
-})();
+  (function () {
+    var el = document.getElementById("app");
+    if (!window.COMPANY_OS) { el.innerHTML = '<p style="color:#d64545;padding:24px">company-os.data.js not found.</p>'; return; }
+    el.innerHTML = window.CompanyOS.render(window.COMPANY_OS);
+  })();
 </script>
 </body>
 </html>
