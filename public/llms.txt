@@ -1,0 +1,19 @@
+# Iron (iron.credit)
+
+> A non-custodial bitcoin-backed credit card: keep your bitcoin, spend dollars, never sell.
+
+Iron lets you lock bitcoin as collateral, borrow dollars (USDT) against it, and spend on a Visa card, without selling and without a credit check. It stays overcollateralized (roughly 40 to 50% LTV) and non-custodial by default via collaborative custody, so the collateral is never rehypothecated. Revenue comes from net interest spread on the credit line, card interchange, and thin transparent FX, never from lending out the collateral.
+
+It is built for two groups: bitcoiners who refuse to sell, and people banks reject. Launch market is the Philippines first, then Indonesia and Vietnam, on licensed local card rails. This site is an early interactive prototype and pitch surface, not a live product yet.
+
+## Key links
+- [Home](https://iron.credit/): the product landing, an interactive credit-line demo (Credit view).
+- [How it works](https://iron.credit/how): deposit bitcoin, get a dollar credit line, spend, repay.
+- [Pricing](https://iron.credit/pricing): no annual fee, up to 50% LTV, no credit check, all-in pricing.
+- [The card](https://iron.credit/card): the Iron card design and specs.
+- [Score](https://iron.credit/score): how holding history and repayment feed a crypto credit score.
+- [Investors](https://iron.credit/investors): the pitch, business model, and market for the raise.
+
+## About
+- Part of adam.inc, the internet portfolio of Adam Pangelinan (Anchor Marianas LLC).
+- Builder: https://adampang.com
