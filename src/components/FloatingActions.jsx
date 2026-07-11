@@ -25,8 +25,8 @@ export default function FloatingActions() {
           <MessageSquarePlus size={16} color={C.amber} /> Feedback
         </button>
         <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"
-          style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 14px", borderRadius: 999, background: "#25D366", color: "#06310f", cursor: "pointer", boxShadow: "0 8px 24px rgba(37,211,102,.35)", fontSize: 13, fontWeight: 700 }}>
-          <MessageCircle size={16} /> WhatsApp
+          style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 14px", borderRadius: 999, border: `1px solid ${C.line}`, background: C.panel, color: C.ink, cursor: "pointer", boxShadow: "0 8px 24px rgba(0,0,0,.16)", fontSize: 13, fontWeight: 600 }}>
+          <MessageCircle size={16} color={C.amber} /> WhatsApp
         </a>
       </div>
 

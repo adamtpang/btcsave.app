@@ -1,9 +1,9 @@
-# Aether: product one-pager
+# Iron: product one-pager
 
 ### Keep your bitcoin. Spend dollars.
 A bitcoin-backed credit line and a USDT card. The trustworthy bitcoin bank for the people who refuse to sell. Chase for BTC and USDT.
 
-*(Aether Pte Ltd, Singapore. Consumer brand name to be finalized.)*
+*(Iron, a Singapore company.)*
 
 ---
 
@@ -32,7 +32,7 @@ A real interest-earning balance sheet, not a trading spread.
 Overcollateralized lending means a fraction of Chase's 5 to 6% charge-offs, so we keep more of the spread and we do not blow up.
 
 ## Why us
-The founder is the customer: a heavy credit user (Chase, Discover, Wise) who pays more in credit interest than any other expense and understands the borrower from the inside. Two technical operator founders who ship. Native distribution into Network School and the global bitcoin community. Partners de-risk the two rails the product runs on: Fulgur and the bitcoin community for the BTC collateral, Tether and Plan B for the USDT credit and card.
+The founder is the customer: a heavy credit user (Chase, Discover, Wise) who pays more in credit interest than any other expense and understands the borrower from the inside. Two technical operator founders who ship. Native distribution into Network School and the global bitcoin community. The two rails the product runs on both have credible, redundant integration paths we are actively pursuing: native bitcoin collateral in collaborative multisig, and a USDT credit line plus a Visa card through a licensed issuer, settled over Lightning rails of the kind IBEX provides. No counterparty is signed yet, and we will never claim one that is not.
 
 ## Market
 Around 480 to 500 million people hold bitcoin. The bitcoin-credit pool is roughly $73.6B today and on a path to $200 to 300B by 2030. Public comps for a focused, credit-led fintech: Nubank near $55 to 60B, Coinbase $50 to 90B. Credible top-of-S-curve outcome: $10 to 60B in market cap, riding bitcoin's own adoption curve.
@@ -47,7 +47,7 @@ Beachhead is the people who already hold bitcoin and refuse to sell: Network Sch
 4. **Bank:** accounts, a savings funnel, more markets. The full bitcoin Chase.
 
 ## The ask
-Raise a lean pre-seed of mission-aligned equity (Fulgur, Curious Ventures, Network School angels) for team and product, and a separate USDT credit facility (debt, via the Tether and Plan B relationship) for the loan book. Never dilute the company to fund the book. The business throws off interest income and becomes self-funding as it scales.
+Raise a $750k pre-seed of mission-aligned equity (target investors we are talking to: Fulgur, Curious Ventures, Network School angels): roughly 15 to 18 months of runway for a team of two to three, licensing and launch in the Philippines, and the first cardholders on the book. Separately, arrange a USDT credit facility (debt) to fund the loan book. Never dilute the company to fund the book. The business throws off interest income and becomes self-funding as it scales.
 
 ---
 

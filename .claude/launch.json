@@ -6,6 +6,18 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 5173
+    },
+    {
+      "name": "company-os-idi",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["-y", "serve", "-l", "8742", "C:/Users/adamp/OneDrive/Aether/idiguam.com/company-os"],
+      "port": 8742
+    },
+    {
+      "name": "vitals-demo",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["-y", "serve", "-l", "8755", "C:/Users/adamp/OneDrive/Aether/vitals.run"],
+      "port": 8755
     }
   ]
 }

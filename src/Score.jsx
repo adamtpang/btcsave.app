@@ -18,6 +18,19 @@ const LIQ_THRESHOLD = 0.85; // line is at risk only if LTV climbs to here
 const sizePts = (v) => (v >= 100000 ? 100 : v >= 10000 ? 60 : v >= 1000 ? 25 : 0);
 const fmt = (n) => "$" + Math.round(n).toLocaleString("en-US");
 
+const Field = ({ label, hint, children }) => {
+  const { C } = useTheme();
+  return (
+    <div>
+      <div className="flex items-center justify-between" style={{ marginBottom: 6 }}>
+        <span style={{ fontSize: 13, fontWeight: 600, color: C.ink }}>{label}</span>
+        {hint && <span className="mono" style={{ fontSize: 11, color: C.mut }}>{hint}</span>}
+      </div>
+      {children}
+    </div>
+  );
+};
+
 export default function Score() {
   const { C } = useTheme();
   const [btc, setBtc] = useState(0.1);
@@ -52,15 +65,6 @@ export default function Score() {
     </>
   );
 
-  const Field = ({ label, hint, children }) => (
-    <div>
-      <div className="flex items-center justify-between" style={{ marginBottom: 6 }}>
-        <span style={{ fontSize: 13, fontWeight: 600, color: C.ink }}>{label}</span>
-        {hint && <span className="mono" style={{ fontSize: 11, color: C.mut }}>{hint}</span>}
-      </div>
-      {children}
-    </div>
-  );
   const input = { width: "100%", padding: "11px 13px", borderRadius: 11, border: `1px solid ${C.line}`, background: C.panel, color: C.ink, fontSize: 14, outline: "none" };
 
   return (

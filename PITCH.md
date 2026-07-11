@@ -1,5 +1,7 @@
 # BTCSave: pitch brief
 
+> ARCHIVED (pre-pivot). This is the original BTCSave savings-app brief. The product has since pivoted to Iron, the non-custodial bitcoin credit card. For the current brief see `ONEPAGER.md`. Kept here for reference only.
+
 > Stack bitcoin every week. Automatically. Self-custody savings on the rails Southeast Asia already uses.
 
 **One-liner:** BTCSave is *Acorns for Bitcoin* in Southeast Asia. A set-and-forget app that auto-buys a fixed amount of BTC every week through local e-wallets (GCash, DANA, MoMo) and lands it in keys the user controls. Not an exchange. A savings habit.

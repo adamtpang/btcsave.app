@@ -35,7 +35,6 @@ export default function Landing() {
   const { C } = useTheme();
   const [market, setMarket] = useState("PH");
   const [weekly, setWeekly] = useState(25);
-  const m = MARKETS[market];
 
   const steps = [
     [Wallet, "Connect your e-wallet", "Link GCash, DANA, or MoMo in seconds. The money you already use, every day."],

@@ -30,7 +30,9 @@ window.COMPANY_OS = {
 
   // Inputs you control (label + current value + target hint). Founders rename these to fit.
   metrics: [
-    { label: "Waitlist signups", value: 0, hint: "north star", key: "waitlist" },
+    { label: "Waitlist signups", value: 0, hint: "north star (pre-launch)", key: "waitlist" },
+    { label: "MRR", value: 0, hint: "$100k target", key: "mrr" },
+    { label: "Cardholders", value: 0, hint: "~6,000 = $100k MRR", key: "cardholders" },
     { label: "Discovery calls", value: 0, hint: "10 / wk", key: "calls" },
     { label: "Posts shipped", value: 0, hint: "5-7 / wk", key: "posts" },
   ],
@@ -101,7 +103,16 @@ window.COMPANY_OS = {
       { label: "Closed beta converting waitlist", done: false },
       { label: "First real loan book", done: false },
     ] },
+    { stage: "6 · Scale to $100k MRR", items: [
+      { label: "First 100 cardholders concierge-onboarded", done: false },
+      { label: "Referral loop live", done: false },
+      { label: "1,000 cardholders", done: false },
+      { label: "Durable break-even (MRR covers burn)", done: false },
+      { label: "$100k MRR (~6,000 cardholders, ~$48M locked)", done: false },
+    ] },
   ],
+  // Target: $100k MRR = $1.2M ARR. Loan book x (net spread ~4% + interchange/FX ~3.6%) = revenue.
+  // Reached at ~6,000 cardholders (bitcoiner mix, $8k avg) to ~10,500 (mass-market, $5k avg).
 
   // Org: function -> who owns it now -> next hire
   org: [

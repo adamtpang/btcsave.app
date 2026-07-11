@@ -7,8 +7,8 @@ import { IronCard } from "../design-system/components/brand/IronCard.jsx";
 
 const PRICE = [
   ["No annual fee", "The card is free to hold. We make money on the credit, not on tricks."],
-  ["~10% APR, shown upfront", "Lower than unsecured credit, and you see the exact rate before you borrow."],
-  ["Up to 50% LTV", "Conservative by default, with no surprise liquidations on the premium tier."],
+  ["~6% to 16% APR, shown upfront", "Rate by grade (around 10% typical), always lower than unsecured credit, and you see the exact number before you borrow."],
+  ["Up to 50% LTV, 60% at the top grade", "Conservative by default, with no surprise liquidations on the premium tier."],
   ["No credit check", "Your bitcoin is the qualification. No FICO, no passport test, no rejection."],
   ["Transparent all-in cost", "One clear number for trade plus FX. No hidden spread, the Wise way."],
   ["Pause or repay anytime", "It revolves like a card. Your bitcoin and its upside stay yours."],
@@ -21,15 +21,17 @@ const STEPS = [
   [RefreshCw, "Repay, revolve", "Pay back on your schedule. Your stack stays."],
 ];
 
+const H2 = ({ children }) => {
+  const { C } = useTheme();
+  return <h2 className="mono" style={{ fontSize: 12, color: C.mut, textTransform: "uppercase", letterSpacing: ".12em", margin: "0 0 16px" }}>{children}</h2>;
+};
+
 export default function Pricing() {
   const { C } = useTheme();
   const navRight = (
     <Link to="/" className="flex items-center" style={{ gap: 6, color: C.mut, fontSize: 13.5, fontWeight: 500 }}>
       <ArrowLeft size={14} /> Home
     </Link>
-  );
-  const H2 = ({ children }) => (
-    <h2 className="mono" style={{ fontSize: 12, color: C.mut, textTransform: "uppercase", letterSpacing: ".12em", margin: "0 0 16px" }}>{children}</h2>
   );
 
   return (

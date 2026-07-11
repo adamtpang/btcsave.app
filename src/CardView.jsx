@@ -7,6 +7,20 @@ import { IronCard } from "../design-system/components/brand/IronCard.jsx";
 
 const MOCK = { full: "4929 4100 7321 0021", masked: "•••• •••• •••• 0021", expiry: "08/29", cvv: "114" };
 
+const Row = ({ C, label, value, copyVal, copied, copy }) => (
+  <div className="flex items-center justify-between" style={{ padding: "12px 0", borderTop: `1px solid ${C.line}` }}>
+    <span style={{ color: C.mut, fontSize: 13 }}>{label}</span>
+    <span className="flex items-center" style={{ gap: 10 }}>
+      <span className="mono" style={{ color: C.ink, fontSize: 14, letterSpacing: ".02em" }}>{value}</span>
+      {copyVal && (
+        <button onClick={() => copy(label, copyVal)} title="Copy" style={{ background: "none", border: "none", cursor: "pointer", color: copied === label ? C.green : C.mut, display: "grid", placeItems: "center" }}>
+          {copied === label ? <Check size={15} /> : <Copy size={15} />}
+        </button>
+      )}
+    </span>
+  </div>
+);
+
 export default function CardView() {
   const { C } = useTheme();
   const [reveal, setReveal] = useState(false);
@@ -15,23 +29,10 @@ export default function CardView() {
   const [wallet, setWallet] = useState(false);
 
   const copy = (label, val) => {
-    try { navigator.clipboard.writeText(val); setCopied(label); setTimeout(() => setCopied(""), 1400); } catch (_) {}
+    try { navigator.clipboard.writeText(val); setCopied(label); setTimeout(() => setCopied(""), 1400); } catch { /* clipboard unavailable */ }
   };
 
   const card = { background: C.panel, border: `1px solid ${C.line}`, borderRadius: 16, padding: 18 };
-  const Row = ({ label, value, copyVal }) => (
-    <div className="flex items-center justify-between" style={{ padding: "12px 0", borderTop: `1px solid ${C.line}` }}>
-      <span style={{ color: C.mut, fontSize: 13 }}>{label}</span>
-      <span className="flex items-center" style={{ gap: 10 }}>
-        <span className="mono" style={{ color: C.ink, fontSize: 14, letterSpacing: ".02em" }}>{value}</span>
-        {copyVal && (
-          <button onClick={() => copy(label, copyVal)} title="Copy" style={{ background: "none", border: "none", cursor: "pointer", color: copied === label ? C.green : C.mut, display: "grid", placeItems: "center" }}>
-            {copied === label ? <Check size={15} /> : <Copy size={15} />}
-          </button>
-        )}
-      </span>
-    </div>
-  );
 
   const navRight = (
     <a href="#waitlist" style={{ padding: "8px 14px", borderRadius: 10, background: C.amber, color: C.accentInk, fontSize: 13, fontWeight: 700 }}>Get started</a>
@@ -86,9 +87,9 @@ export default function CardView() {
                   {reveal ? <EyeOff size={14} /> : <Eye size={14} />} {reveal ? "Hide" : "Reveal"}
                 </button>
               </div>
-              <Row label="Card number" value={reveal ? MOCK.full : MOCK.masked} copyVal={reveal ? MOCK.full.replace(/\s/g, "") : null} />
-              <Row label="Expiry" value={reveal ? MOCK.expiry : "••/••"} />
-              <Row label="CVV" value={reveal ? MOCK.cvv : "•••"} />
+              <Row C={C} copied={copied} copy={copy} label="Card number" value={reveal ? MOCK.full : MOCK.masked} copyVal={reveal ? MOCK.full.replace(/\s/g, "") : null} />
+              <Row C={C} copied={copied} copy={copy} label="Expiry" value={reveal ? MOCK.expiry : "••/••"} />
+              <Row C={C} copied={copied} copy={copy} label="CVV" value={reveal ? MOCK.cvv : "•••"} />
             </div>
 
             <div style={card}>

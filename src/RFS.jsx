@@ -50,17 +50,18 @@ const PASSED = [
   ["Bitcoin yield and staking", "Largely a story. The headline programs pay a volatile token that holders dump on a near-zero native rate. Real yield loops back to credit, above."],
 ];
 
+const H2 = ({ children }) => {
+  const { C } = useTheme();
+  return <h2 className="disp" style={{ fontSize: 13, color: C.mut, textTransform: "uppercase", letterSpacing: ".12em", margin: "0 0 14px" }}>{children}</h2>;
+};
+
 export default function RFS() {
   const { C } = useTheme();
 
   const navRight = (
     <Link to="/" className="flex items-center" style={{ gap: 6, color: C.mut, fontSize: 13.5, fontWeight: 500 }}>
-      <ArrowLeft size={14} /> btcsave.app
+      <ArrowLeft size={14} /> iron.credit
     </Link>
-  );
-
-  const H2 = ({ children }) => (
-    <h2 className="disp" style={{ fontSize: 13, color: C.mut, textTransform: "uppercase", letterSpacing: ".12em", margin: "0 0 14px" }}>{children}</h2>
   );
 
   return (
@@ -109,8 +110,7 @@ export default function RFS() {
               <span className="disp tnum" style={{ color: C.amber, fontSize: 15, fontWeight: 700 }}>{idea.n}</span>
               <span style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", color: C.amber, border: `1px solid ${C.amber}`, borderRadius: 999, padding: "2px 8px" }}>{idea.tier}</span>
             </div>
-            <h3 className="disp" style={{ fontSize: "clamp(22px, 3.2vw, 28px)", fontWeight: 800, lineHeight: 1.12, letterSpacing: "-.01em", color: C.ink, margin: "0 0 6px" }}>{idea.title}</h3>
-            <div style={{ color: C.mut, fontSize: 13, marginBottom: 16 }}>By Iron</div>
+            <h3 className="disp" style={{ fontSize: "clamp(22px, 3.2vw, 28px)", fontWeight: 800, lineHeight: 1.12, letterSpacing: "-.01em", color: C.ink, margin: "0 0 12px" }}>{idea.title}</h3>
             {idea.paras.map((p, i) => (
               <p key={i} className="body" style={{ fontSize: 16, lineHeight: 1.65, color: C.ink, margin: "0 0 14px" }}>{p}</p>
             ))}
@@ -130,11 +130,11 @@ export default function RFS() {
           </div>
         </section>
 
-        {/* Grading the existing RFS */}
+        {/* Pressure-testing against Fulgur's RFS */}
         <section style={{ marginBottom: 34 }}>
-          <H2>Grading the existing bitcoin RFS</H2>
+          <H2>Pressure-testing against Fulgur's RFS</H2>
           <p className="body" style={{ fontSize: 16, lineHeight: 1.65, color: C.ink, margin: "0 0 14px" }}>
-            Fulgur Ventures publishes its own request for startups with four ideas. Graded on the same filter: bitcoin savings apps are real but commoditized, an A to B, and the most stablecoin-exposed of the four. Tradfi exploits is a C as written, though the inheritance slice buried inside it is the S-tier idea at the top of this page. Bitcoin financial services is a B, a huge market but incumbent-dominated. Universal payments is the S-tier of their four, for the reasons above. Good list. We would reorder it.
+            Fulgur Ventures publishes its own Request for Startups with four ideas, and we ran our roadmap against it. We land on three of the four. Bitcoin savings apps are real but commoditized and the most stablecoin-exposed of the set, which is exactly why we pivoted away from that (it is our own origin story). Tradfi exploits is broad, and the inheritance slice inside it is the S-tier idea at the top of this page. Bitcoin financial services is a huge market, and our secured credit line sits squarely in it. Universal payments is the S-tier of the four, and Lightning settlement is on our roadmap. A sharp list. We agree with most of it.
           </p>
         </section>
 

@@ -28,7 +28,7 @@ const STEPS = [
   {
     icon: RotateCcw,
     title: "You repay, on your terms",
-    do: "Pay back whenever you like. There is no fixed due date and no penalty for paying early.",
+    do: "Pay back whenever you like, instant and low-fee over Lightning. There is no fixed due date and no penalty for paying early.",
     see: "Your balance drops, interest stops on what you repay, and the moment you are clear you can pull your full bitcoin back out, upside intact.",
   },
 ];
@@ -37,9 +37,14 @@ const STEPS = [
 const BANDS = [
   ["Healthy", "Below 50%", "Business as usual. Spend, repay, relax.", "green"],
   ["Heads up", "50 to 65%", "We send a friendly notice. Nothing is required yet.", "amber"],
-  ["Top up", "65 to 80%", "Add a little bitcoin or repay a little. We tell you exactly how much.", "amber"],
+  ["Top up", "65 to 85%", "Add a little bitcoin or repay a little. We tell you exactly how much.", "amber"],
   ["Last resort", "85%+", "Only if you ignore every warning, we sell the smallest slice needed to make you safe again. Never more.", "mut"],
 ];
+
+const H2 = ({ children }) => {
+  const { C } = useTheme();
+  return <h2 className="disp" style={{ fontSize: 13, color: C.mut, textTransform: "uppercase", letterSpacing: ".12em", margin: "0 0 14px" }}>{children}</h2>;
+};
 
 export default function How() {
   const { C } = useTheme();
@@ -49,10 +54,6 @@ export default function How() {
       <Link to="/pricing" className="nav-link" style={{ color: C.mut, fontSize: 13.5, fontWeight: 500 }}>Pricing</Link>
       <a href="#waitlist" style={{ padding: "8px 14px", borderRadius: 10, background: C.amber, color: C.accentInk, fontSize: 13, fontWeight: 700 }}>Get started</a>
     </>
-  );
-
-  const H2 = ({ children }) => (
-    <h2 className="disp" style={{ fontSize: 13, color: C.mut, textTransform: "uppercase", letterSpacing: ".12em", margin: "0 0 14px" }}>{children}</h2>
   );
 
   const bandColor = (k) => (k === "green" ? C.green : k === "amber" ? C.amber : C.mut);
@@ -179,7 +180,7 @@ export default function How() {
           <div className="how-2" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 12 }}>
             {[
               ["No annual fee", "Holding the card costs nothing."],
-              ["About 10% a year", "Interest, charged only on what you actually borrow. Borrow $1,000 for a month, pay roughly $8."],
+              ["From ~6% to ~16% a year", "Interest by grade, around 10% typical, charged only on what you actually borrow. Borrow $1,000 for a month at 10%, pay roughly $8."],
               ["No credit check", "We never pull your credit or ask for payslips."],
               ["No exit penalty", "Repay early, leave anytime, take your bitcoin and go."],
             ].map(([t, b], i) => (

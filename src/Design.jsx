@@ -9,6 +9,11 @@ const IronMark = ({ size = 40, color }) => (
   </svg>
 );
 
+const H2 = ({ children }) => {
+  const { C } = useTheme();
+  return <h2 className="mono" style={{ fontSize: 12, color: C.mut, textTransform: "uppercase", letterSpacing: ".12em", margin: "0 0 16px" }}>{children}</h2>;
+};
+
 export default function Design() {
   const { C, theme } = useTheme();
 
@@ -24,10 +29,6 @@ export default function Design() {
     ["Data / IBM Plex Mono", "mono", 15, 500],
   ];
 
-  const H2 = ({ children }) => (
-    <h2 className="mono" style={{ fontSize: 12, color: C.mut, textTransform: "uppercase", letterSpacing: ".12em", margin: "0 0 16px" }}>{children}</h2>
-  );
-
   const navRight = (
     <Link to="/" className="flex items-center" style={{ gap: 6, color: C.mut, fontSize: 13.5, fontWeight: 500 }}>
       <ArrowLeft size={14} /> Home
@@ -42,7 +43,7 @@ export default function Design() {
           <div className="mono" style={{ color: C.mut, fontSize: 12, letterSpacing: ".14em", textTransform: "uppercase", marginBottom: 12 }}>Brand and design system</div>
           <h1 className="disp" style={{ fontSize: "clamp(36px,6vw,60px)", fontWeight: 800, lineHeight: 1.02, letterSpacing: "-.02em", margin: "0 0 14px", color: C.ink }}>Iron</h1>
           <p className="body" style={{ fontSize: 17, lineHeight: 1.55, color: C.mut, maxWidth: 600, margin: 0 }}>
-            A sovereign private bank that runs on bitcoin. Monochrome by design: cool iron-grey, near-black, and platinum. Premium, old-money, the opposite of a casino.
+            A private bank experience built on bitcoin. Monochrome by design: cool iron-grey, near-black, and platinum. Premium, old-money, the opposite of a casino.
           </p>
         </div>
 

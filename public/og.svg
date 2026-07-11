@@ -1,0 +1,31 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16181c"/>
+      <stop offset="0.5" stop-color="#0e1014"/>
+      <stop offset="1" stop-color="#1f2329"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3f5f7"/>
+      <stop offset="1" stop-color="#aab0b8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1152" height="582" rx="18" fill="none" stroke="#2b3038" stroke-width="1.5"/>
+
+  <!-- brand mark + wordmark -->
+  <g transform="translate(84,86)">
+    <path fill="url(#steel)" d="M0 0h56v14H33v33h18v14H0V47h18V14H0V0Z"/>
+    <text x="76" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700" letter-spacing="6" fill="#e8eaed">IRON</text>
+  </g>
+
+  <!-- headline -->
+  <text x="84" y="330" font-family="Georgia, 'Times New Roman', serif" font-size="94" font-weight="700" fill="#f3f5f7">Keep your bitcoin.</text>
+  <text x="84" y="428" font-family="Georgia, 'Times New Roman', serif" font-size="94" font-weight="700" fill="#f3f5f7">Spend dollars.</text>
+
+  <!-- subtitle -->
+  <text x="88" y="500" font-family="Arial, sans-serif" font-size="30" fill="#939aa4">The non-custodial bitcoin credit card.</text>
+
+  <!-- footer -->
+  <text x="88" y="566" font-family="Arial, sans-serif" font-size="24" letter-spacing="2" fill="#6c727b">iron.credit</text>
+</svg>

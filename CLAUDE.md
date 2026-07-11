@@ -39,4 +39,4 @@ This repo doubles as the first dogfood of a portable company operating system in
 - When the user asks, operate it: "log this week", "check off <milestone>", "set <metric> to N", "interview me" (onboarding a new company), "sync from context". After edits, tell them to refresh the dashboard.
 - It is internal. Never deploy `company-os/` to the public site (keep it out of `src/` and `public/`; it is not a route).
 
-See `MASTERPLAN.md` (strategy, master plan, income and speed scoreboard), `GRAVEYARD.md` (failure modes to avoid), `PROTOTYPE.md` (build path + system diagrams), `SITEMAP.md` (IA + SEO plan), `COMPANY.md` and `COFOUNDER.md` (operating and team playbooks), and `PITCH.md` for the full brief.
+See `MASTERPLAN.md` (strategy, master plan, income and speed scoreboard), `GRAVEYARD.md` (failure modes to avoid), `PROTOTYPE.md` (build path + system diagrams), `SITEMAP.md` (IA + SEO plan), `COMPANY.md` and `COFOUNDER.md` (operating and team playbooks), and `ONEPAGER.md` for the current brief. (`PITCH.md` is the archived pre-pivot BTCSave savings-app brief, kept for reference only.)

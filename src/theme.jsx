@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components -- theme context module intentionally exports the provider, the hook, and the palette together */
 import { createContext, useContext, useEffect, useState } from "react";
 
 // Iron design system palette: monochrome, premium, dark by default.
@@ -13,7 +14,7 @@ export const PALETTES = {
   },
   light: {
     bg: "#eef0f2", panel: "#ffffff", panel2: "#f4f6f8", line: "#dfe3e7",
-    ink: "#14171b", mut: "#586069", amber: "#16181c", amber2: "#2c313a",
+    ink: "#14171b", mut: "#4b535c", amber: "#16181c", amber2: "#2c313a",
     accentInk: "#ffffff", accentSoft: "rgba(20,23,28,.06)", green: "#6a7370",
     phone: "linear-gradient(180deg,#ffffff,#f4f6f8)",
     glow1: "rgba(20,23,28,.03)", glow2: "rgba(20,23,28,.015)",
