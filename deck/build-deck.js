@@ -43,28 +43,28 @@ s.addNotes("Open: bitcoiners refuse to sell, but they still need dollars. Iron l
 
 // ---------- S2 Problem ----------
 s = p.addSlide(); base(s, 2);
-head(s, "THE PROBLEM", "A real need with no trustworthy home", 6.1);
+head(s, "THE PROBLEM", "Credit stopped innovating and started extracting", 6.1);
 const probs = [
-  ["Asset-rich, cash-poor by choice", "Selling bitcoin is a taxable event and gives up the upside. Holders want dollars, not a sale."],
-  ["Billions the banks reject", "No credit file, the wrong country, no history. Their bitcoin is the qualification banks ignore."],
-  ["Every existing option is a trap", "Custodial, opaque, or region-locked. Celsius and BlockFi blew up rehypothecating customer funds."],
+  ["Credit became extraction", "The industry solved credit decades ago, then perfected the squeeze: 20 to 30% APR, minimums so the balance never dies."],
+  ["Squeezed from the other side", "Bitcoiners are asset-rich and cash-poor by choice. Selling is a taxable event and gives up the upside."],
+  ["Rejected, or trapped", "No credit file means no. Every bitcoin-backed option is custodial or opaque: Celsius and BlockFi rehypothecated."],
 ];
-let y = 2.5;
+let y = 2.42;
 probs.forEach(([t, d], i) => {
   s.addText(String(i + 1), { x: 0.55, y, w: 0.5, h: 0.6, margin: 0, fontFace: DISP, fontSize: 26, color: C.faint, valign: "top" });
   s.addText([{ text: t, options: { bold: true, color: C.ink, fontSize: 15, breakLine: true } },
              { text: d, options: { color: C.mut, fontSize: 12.5 } }],
     { x: 1.1, y: y - 0.02, w: 4.7, h: 0.85, margin: 0, fontFace: BODY, lineSpacingMultiple: 1.02 });
-  y += 0.92;
+  y += 0.90;
 });
-card(s, 6.15, 2.5, 3.3, 2.35);
-s.addText("THE GRAVEYARD", { x: 6.45, y: 2.72, w: 2.8, h: 0.3, margin: 0, fontFace: BODY, fontSize: 10.5, color: C.mut, charSpacing: 2, bold: true });
+card(s, 6.15, 2.42, 3.3, 2.35);
+s.addText("THE GRAVEYARD", { x: 6.45, y: 2.64, w: 2.8, h: 0.3, margin: 0, fontFace: BODY, fontSize: 10.5, color: C.mut, charSpacing: 2, bold: true });
 s.addText([
   { text: "Celsius", options: { breakLine: true, color: C.faint, fontSize: 17, strike: true } },
   { text: "BlockFi", options: { breakLine: true, color: C.faint, fontSize: 17, strike: true } },
   { text: "Voyager", options: { color: C.faint, fontSize: 17, strike: true } },
-], { x: 6.45, y: 3.12, w: 2.8, h: 1.0, margin: 0, fontFace: DISP, lineSpacingMultiple: 1.15 });
-s.addText("Died custodial, opaque, and rehypothecated. We are built to be the opposite.", { x: 6.45, y: 4.2, w: 2.75, h: 0.6, margin: 0, fontFace: BODY, fontSize: 11.5, color: C.mut });
+], { x: 6.45, y: 3.04, w: 2.8, h: 1.0, margin: 0, fontFace: DISP, lineSpacingMultiple: 1.15 });
+s.addText("Died custodial, opaque, and rehypothecated. We are built to be the opposite.", { x: 6.45, y: 4.12, w: 2.75, h: 0.6, margin: 0, fontFace: BODY, fontSize: 11.5, color: C.mut });
 s.addNotes("The lending graveyard died of the same disease: they lent out customer collateral. Our whole design forbids it. This is the wedge with a bitcoin-native investor.");
 
 // ---------- S3 Product ----------

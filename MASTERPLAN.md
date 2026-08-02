@@ -147,6 +147,34 @@ Consensus: Singapore is a global top-5 and clear Asia-#1 jurisdiction, ahead of 
 4. **Bank:** accounts, a savings funnel, more markets, more collateral assets (modular for zcash, quantus later). The full bitcoin Chase.
 5. **The limit:** the credit and banking layer of a hyperbitcoinized world. Visa-plus-JPMorgan scale. Hold control throughout.
 
+### 7a. The sovereignty trigger (when Iron stops renting its right to exist)
+
+Sits between **Graduate** and **Bank**. Write it down now so the decision is made in cold blood rather than during a crisis.
+
+**The principle.** Renting a rail means renting permission to operate. Palmer Luckey took the hard path with Erebor for exactly this reason: *"The moment that you're dependent on somebody else for the key infrastructure, the key risk management, the key licensure, they can kick you off the platform. They can be forced to kick you off the platform."* Our own graveyard rule 7 says the same thing from the other end: WaveCrest bricked six card programs in a single day, and Wirecard took the rest. The number-one card killer is the issuer, not bitcoin.
+
+**The three stages, in order:**
+
+| Stage | What Iron holds | What it costs |
+|---|---|---|
+| **Rent** (now) | A licensed issuer (Rain or equivalent) runs the BIN. Fastest path to a live card. | Someone else's risk committee can end the business. |
+| **Redundancy** (V1 to Graduate) | Two or more live issuers, program portability designed in from day one. | Integration and compliance overhead, twice. Buys time, not control. |
+| **Sovereignty** (Bank) | Iron holds its own licence or charter in at least one market. | Capital requirements, compliance headcount, slower product, and no hypergrowth. |
+
+**Redundancy is not sovereignty.** A second issuer means an outage does not kill us. It does not mean we get to decide who we serve. Do not confuse the two in the deck or in our own heads.
+
+**Pull the trigger and pursue our own licence when any ONE of these fires:**
+
+1. **Editorial control.** A rail asks us to drop a customer, restrict a category, or change terms for a reason that is not risk or law. This is the Steam pattern: nobody in the chain admits to being the censor, but everyone agrees that if you do not comply they drop you. One instance is the signal, not a pattern.
+2. **Concentration we cannot fix.** A single issuer carries more than ~60% of the book and a second live issuer is not achievable within two quarters.
+3. **Economics invert.** The all-in cost of rented rails (interchange share, per-card fees, sponsor margin) exceeds the modelled cost of carrying our own licence plus compliance.
+4. **Counterparty instability.** Any sponsor, issuer, or their regulator shows funding stress, an enforcement action, or an exit. Do not wait for the second warning; WaveCrest gave one day.
+5. **Scale ceiling.** The counterparty's risk committee starts capping our growth rather than pricing it.
+
+**The honest counterweight.** Owning the licence means we cannot hypergrow. Palmer is blunt about it: *"you can't just scale to 50 billion of deposits tomorrow even if there's the demand."* Sovereignty buys control at the price of speed. That is the correct trade for a company whose entire thesis is survival, but it is a real trade and it should be made deliberately, not by accident.
+
+**Standing rule.** Every rail contract we sign gets reviewed against this list before signature: what does this counterparty get to decide for us, and what is our exit if they decide it badly?
+
 ---
 
 ## 8. The great filter (the hardest thing)

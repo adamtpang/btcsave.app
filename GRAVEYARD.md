@@ -4,6 +4,16 @@ The single most important finding: **the lending graveyard and the card graveyar
 
 Almost none of these companies were killed by "bitcoin is volatile." They were killed by their own structure.
 
+## The graveyard is proof of demand, not proof of impossibility
+
+This is the answer to the first objection anyone raises: *"didn't this already fail?"*
+
+Commercial failure does not mean the product was bad. It means they could not figure out how to run it without stealing. Palmer Luckey, on why he collects commercially failed motorcycles: *"Commercial failure doesn't mean a product's bad. It just means they couldn't figure out how to make a business out of it."*
+
+Borrowing dollars against bitcoin is a real, durable, recurring need. The companies below **proved** that need by attracting billions of dollars of it in a few short years. Then they destroyed themselves on structure: rehypothecating the collateral, selling unregistered yield, betting the book on a single counterparty. Every one of those is a choice, not a law of physics.
+
+The demand did not die with them. It is larger now, and it is unserved by anyone the market fully trusts. **A graveyard this size is a market signal, and the fact that everyone in it died the same few deaths is the specification for the company that survives.** That specification is the rest of this document.
+
 ---
 
 ## The lenders that collapsed

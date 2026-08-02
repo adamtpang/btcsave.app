@@ -34,7 +34,7 @@ const TRUST = [
   [ShieldCheck, "Never rehypothecate", "The exact thing that killed Celsius and BlockFi. We do not do it, and by construction we cannot."],
   [Scale, "Licensed rails from day one", "A Visa principal-member issuer with multi-issuer redundancy, a licensed local rail for the Philippines (BSP and EMI), and a Singapore holdco on the MAS payments track."],
   [Landmark, "Skin in the game", "Built for the bitcoin community, not extracted from it."],
-  [BookOpen, "No predatory tricks", "Rates shown upfront, the true cost in plain language. Interest is how we make money, and we will never hide that."],
+  [BookOpen, "No predatory tricks", "The industry makes its money when you lose track. We make ours one way, on a rate you agreed to and can always see. Interest is the business, and we will never hide that."],
 ];
 
 const MODEL = [
@@ -139,8 +139,11 @@ export default function Credit() {
         {/* Problem */}
         <section style={{ marginBottom: 22 }}>
           <H2>The problem</H2>
+          <p className="body" style={{ fontSize: 16.5, lineHeight: 1.65, color: C.ink, margin: "0 0 14px" }}>
+            Credit stopped innovating and started extracting. The card industry solved the hard part decades ago, then spent the years since perfecting the squeeze: 20 to 30% APR, minimum payments engineered so the balance never dies, penalty fees timed for the worst possible moment, and a rejection for anyone without the right paperwork.
+          </p>
           <p className="body" style={{ fontSize: 16.5, lineHeight: 1.65, color: C.ink, margin: 0 }}>
-            Bitcoiners are asset-rich and cash-poor by choice. Selling means a taxable event and giving up the upside, so they do not want to sell, yet they still need dollars. The existing ways to borrow against bitcoin are custodial, opaque, gamified, or region-locked, and the household names that tried this (Celsius, BlockFi) blew up by rehypothecating customer funds. A real, urgent, recurring need with no trustworthy home.
+            Bitcoiners are squeezed from the other direction: asset-rich and cash-poor by choice. Selling means a taxable event and giving up the upside, so they will not sell, yet they still need dollars. The existing ways to borrow against bitcoin are custodial, opaque, gamified, or region-locked, and the household names that tried it (Celsius, BlockFi) blew up by rehypothecating customer funds. A real, urgent, recurring need with no trustworthy home.
           </p>
         </section>
 
