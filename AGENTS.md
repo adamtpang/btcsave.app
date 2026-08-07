@@ -1,7 +1,12 @@
-<!-- BEGIN:claude-chat-continuation -->
-# Continue From Claude Chats
+<!-- BEGIN:summon-standard -->
+Summon standard: this company must pass the six readiness gates in `summon.company/SUMMON_COMPANY_STANDARD.md` (Outcome, Evidence, Workspace, Organization, Skills, Runtime). Read `NORTH_STAR.md`, `EVIDENCE.md`, `company/ORGANIZATION.md`.
+<!-- END:summon-standard -->
 
-Claude Code transcripts for this project have been indexed for Codex in `CODEX_CONTINUE_FROM_CLAUDE.md`. Read that file when the user asks to continue work from Claude, resume a Claude session, or understand what Claude already tried.
+<!-- BEGIN:grok-chat-continuation -->
+Grok chat continuation: read `GROK_CONTINUE_FROM_CLAUDE.md` and/or `GROK_CONTINUE_FROM_CODEX.md` when resuming in Grok. Refresh with `node .grok/sync-to-grok.js` from Aether root.
+<!-- END:grok-chat-continuation -->
+<!-- BEGIN:claude-chat-continuation -->
+Claude chat continuation: read `CODEX_CONTINUE_FROM_CLAUDE.md` to resume from the latest local Claude Code sessions for this project.
 <!-- END:claude-chat-continuation -->
 
 <!-- BEGIN:claude-codex-sync -->
@@ -13,12 +18,6 @@ If this file contains older project context that conflicts with `CLAUDE.md`, pre
 <!-- END:claude-codex-sync -->
 
 <!-- BEGIN:imported-claude-context -->
-# Imported Claude context
-
-Copied from `CLAUDE.md` on 2026-07-08 so Codex starts with the same project context Claude Code used. Keep `CLAUDE.md` as the source of truth and refresh this block after meaningful Claude-side progress.
-
-<!-- SOURCE: CLAUDE.md -->
-
 # Iron: project context
 
 **What:** A non-custodial bitcoin-backed credit card. Lock bitcoin as collateral, borrow dollars (USDT) against it, spend on a Visa card, never sell. Two segments (the barbell): bitcoiners who refuse to sell, and the people banks reject. Launch via a licensed card rail, non-custodial by default. ("Keep your bitcoin, spend dollars.")

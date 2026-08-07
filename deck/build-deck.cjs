@@ -110,7 +110,7 @@ s.addNotes("A bitcoin lending investor drills straight into these. Have the numb
 s = p.addSlide(); base(s, 5);
 head(s, "WHY IT WINS", "Not a loan. A bitcoin bank.");
 const moat = [
-  ["A card, not just a borrow button", "A non-custodial bitcoin credit line plus a card and local-rail spend layer in emerging markets. Ledn and Coinbase lend, but they do not put a spendable card in your pocket in Manila."],
+  ["A card, not just a borrow button", "A non-custodial credit line plus a card and local-rail spend layer. Ledn and Coinbase lend; neither hands you a spendable card."],
   ["Multi-issuer card redundancy", "No single BIN sponsor can brick us. The number-one card killer is the issuer, not bitcoin. Redundancy is structural resilience."],
   ["An underwriting-data flywheel", "Every loan we make teaches us how bitcoiners borrow and repay, the proprietary path toward unsecured credit."],
 ];
