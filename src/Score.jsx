@@ -196,6 +196,9 @@ export default function Score() {
         {/* Grade rubric */}
         <section style={{ marginTop: 16 }}>
           <h2 className="disp" style={{ fontSize: 13, color: C.mut, textTransform: "uppercase", letterSpacing: ".12em", margin: "0 0 12px" }}>How grades map to terms</h2>
+          <p className="body" style={{ fontSize: 14, lineHeight: 1.6, color: C.mut, margin: "0 0 14px", maxWidth: 620 }}>
+            This is not a discount ladder. Every grade is a level of trust we are willing to extend, priced in LTV and rate because those are the only honest units trust comes in. Climb it by holding longer and repaying with us, and the terms simply catch up to the track record you already have.
+          </p>
           <div style={{ background: C.panel, border: `1px solid ${C.line}`, borderRadius: 14, overflow: "hidden" }}>
             <div className="flex" style={{ padding: "10px 16px", borderBottom: `1px solid ${C.line}`, fontSize: 11.5, color: C.mut, textTransform: "uppercase", letterSpacing: ".06em" }}>
               <span style={{ flex: 1 }}>Grade</span><span style={{ flex: 1, textAlign: "center" }}>Score</span><span style={{ flex: 1, textAlign: "center" }}>Max LTV</span><span style={{ flex: 1, textAlign: "right" }}>Rate</span>

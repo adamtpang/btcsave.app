@@ -45,7 +45,7 @@ export default function Pricing() {
             <div className="mono" style={{ color: C.mut, fontSize: 12, letterSpacing: ".14em", textTransform: "uppercase", marginBottom: 12 }}>Pricing</div>
             <h1 className="disp" style={{ fontSize: "clamp(34px,5.5vw,54px)", fontWeight: 800, lineHeight: 1.03, letterSpacing: "-.02em", margin: "0 0 14px", color: C.ink }}>Simple, and honest.</h1>
             <p className="body" style={{ fontSize: 16.5, lineHeight: 1.55, color: C.mut, maxWidth: 520, margin: 0 }}>
-              We make money the way a real bank does, on the interest, not on hidden fees or penalties. Every number is shown before you borrow a cent. Illustrative at launch.
+              The card industry makes its money when you lose track: penalty fees, minimum payments, a rate you never quite see. We make ours one way, on the interest you agreed to, at a number shown before you borrow a cent. Illustrative at launch.
             </p>
           </div>
           <div style={{ display: "grid", placeItems: "center" }}>
