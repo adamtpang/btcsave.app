@@ -45,6 +45,14 @@ One asset, bitcoin, solves a painful, recurring need for two very different grou
 
 **The wedge:** radical simplicity (one job, turn locked bitcoin into spendable dollars), self-custody by default, transparent pricing. Launch market: Philippines first (BSP-regulated, GCash 81M users, $35.6B/yr remittances), then Indonesia, then Vietnam.
 
+### 1a. The distribution engine: affinity, not paid acquisition
+
+Name what we are already doing. MBNA built the largest independent card issuer of its era on one mechanic: co-brand with a community that already trusts itself (alumni associations, AAA, professional groups, eventually 1,400-plus affinity groups), and let that trust do the vouching a billboard never could. Average annual earnings growth of 25% through the 1990s came from this alone, not from a smarter rate.
+
+Iron's plan is the same mechanic pointed at different affinity groups: Network School and the global bitcoin community. Invite-only, gated by bitcoin balance, concierge-onboard the first 100 personally, then a referral loop. This is not a beachhead we happen to have access to. It is the growth engine, on purpose, and it should be defended and resourced like one: CAC near zero because the community, not the ad, does the vouching, and every founding member is themselves an affinity node once they refer the next five.
+
+The failure mode to avoid: MBNA eventually diluted the mechanic chasing volume (25 acquisitions in 1998 alone, cards issued through 3,600 organizations by the mid-90s) and the discipline of "this group already trusts itself" gave way to "this group merely exists." Iron should resist widening the affinity net faster than trust can travel through it. The bitcoin community and Network School are enough for a long time.
+
 ---
 
 ## 2. The dream team
