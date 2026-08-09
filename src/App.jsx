@@ -10,6 +10,7 @@ import How from "./How.jsx";
 import Score from "./Score.jsx";
 import CardView from "./CardView.jsx";
 import Demo from "./Demo.jsx";
+import Legends from "./Legends.jsx";
 import FloatingActions from "./components/FloatingActions.jsx";
 
 const TITLES = {
@@ -23,6 +24,7 @@ const TITLES = {
   "/rfs": "Bitcoin Requests for Startups · Iron",
   "/design": "Brand and design system · Iron",
   "/demo": "Live demo · Iron",
+  "/legends": "The greatest credit companies of all time · Iron",
 };
 
 export default function App() {
@@ -61,6 +63,7 @@ export default function App() {
         <Route path="/score" element={<Score />} />
         <Route path="/card" element={<CardView />} />
         <Route path="/demo" element={<Demo />} />
+        <Route path="/legends" element={<Legends />} />
         <Route path="*" element={<Credit />} />
       </Routes>
       <FloatingActions />
