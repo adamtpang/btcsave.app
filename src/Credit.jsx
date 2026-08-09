@@ -328,9 +328,12 @@ export default function Credit() {
 
         {/* Footer line */}
         <div style={{ paddingTop: 22, borderTop: `1px solid ${C.line}` }}>
-          <p className="disp" style={{ fontSize: 17, fontWeight: 700, color: C.ink, lineHeight: 1.4, margin: 0 }}>
+          <p className="disp" style={{ fontSize: 17, fontWeight: 700, color: C.ink, lineHeight: 1.4, margin: "0 0 12px" }}>
             Everyone else sells a bitcoin loan. We are building the bitcoin bank, the most trustworthy one, for the people who refuse to sell.
           </p>
+          <Link to="/legends" className="flex items-center" style={{ gap: 7, color: C.amber, fontSize: 13.5, fontWeight: 600 }}>
+            How we stack up against the greatest credit companies of all time <ArrowRight size={14} />
+          </Link>
         </div>
       </article>
     </div>
