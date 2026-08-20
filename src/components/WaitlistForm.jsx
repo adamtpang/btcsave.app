@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 // Inline capture straight into the Iron Waitlist Google Form (field resolved from the form).
 // no-cors POST returns an opaque response, so we optimistically confirm on submit.
@@ -38,18 +40,17 @@ export default function WaitlistForm({ C, big, cta = "Get early access" }) {
 
   return (
     <form onSubmit={submit} style={{ display: "flex", gap: 8, flexWrap: "wrap", maxWidth: big ? 460 : 420 }}>
-      <input
+      <Input
         type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
         placeholder="you@email.com" aria-label="Email address"
-        style={{ flex: "1 1 220px", minWidth: 0, padding: big ? "14px 15px" : "11px 14px", borderRadius: 12, border: `1px solid ${C.line}`, background: C.panel, color: C.ink, fontSize: big ? 15 : 14, outline: "none" }}
+        style={{ flex: "1 1 220px", minWidth: 0, height: "auto", padding: big ? "14px 15px" : "11px 14px", borderRadius: 12, border: `1px solid ${C.line}`, background: C.panel, color: C.ink, fontSize: big ? 15 : 14 }}
       />
-      <button
+      <Button
         type="submit" disabled={busy}
-        className="flex items-center"
-        style={{ gap: 8, justifyContent: "center", padding: big ? "14px 22px" : "11px 18px", borderRadius: 12, border: "none", background: C.amber, color: C.accentInk, fontSize: big ? 15 : 14, fontWeight: 700, cursor: busy ? "default" : "pointer", whiteSpace: "nowrap", opacity: busy ? 0.7 : 1 }}
+        style={{ height: "auto", gap: 8, padding: big ? "14px 22px" : "11px 18px", borderRadius: 12, background: C.amber, color: C.accentInk, fontSize: big ? 15 : 14, fontWeight: 700, whiteSpace: "nowrap", opacity: busy ? 0.7 : 1 }}
       >
         {busy ? "Joining..." : cta} <ArrowRight size={17} />
-      </button>
+      </Button>
     </form>
   );
 }
