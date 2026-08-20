@@ -1,9 +1,15 @@
-// Post-build prerender: visits every real route in the built SPA with a
-// headless browser, waits for React to render, and writes the fully
-// rendered HTML back into dist/<route>/index.html. Root "/" overwrites
-// dist/index.html directly. This is what makes AI crawlers (GPTBot,
-// ClaudeBot, PerplexityBot) see real content: they never execute
-// JavaScript, so without this the raw HTML they fetch is an empty shell.
+// Local-only prerender (never runs on Vercel -- its build container is
+// missing libnspr4.so and Puppeteer's bundled Chromium can't launch there,
+// confirmed via a real failed deploy 2026-08-20). Run this by hand
+// (`npm run prerender`) after `npm run build` whenever real page content
+// changes. It visits every real route in the built SPA with a headless
+// browser, waits for React to render, and writes the fully rendered HTML
+// into the git-tracked prerendered/ directory. The vite.config.js
+// `copyPrerendered` plugin then copies those files into dist/ on every
+// build (local or on Vercel), pure filesystem I/O, no browser required in
+// CI. This two-step split is what makes AI crawlers (GPTBot, ClaudeBot,
+// PerplexityBot) see real content: they never execute JavaScript, so
+// without this the raw HTML they fetch is an empty shell.
 import { createServer } from "node:http";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -14,6 +20,7 @@ import handler from "serve-handler";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.join(__dirname, "..", "dist");
+const OUT = path.join(__dirname, "..", "prerendered");
 const PORT = 4173;
 
 const ROUTES = [
@@ -60,13 +67,13 @@ async function main() {
       await new Promise((r) => setTimeout(r, 400));
 
       const html = await page.content();
-      const outDir = route === "/" ? DIST : path.join(DIST, route.slice(1));
+      const outDir = route === "/" ? OUT : path.join(OUT, route.slice(1));
       if (!existsSync(outDir)) await mkdir(outDir, { recursive: true });
       const outFile = path.join(outDir, "index.html");
       await writeFile(outFile, html, "utf8");
 
       const hasH1 = /<h1[\s>]/.test(html);
-      console.log(`${hasH1 ? "OK " : "!! "}${route.padEnd(12)} -> ${path.relative(DIST, outFile)} (${(html.length / 1024).toFixed(1)} KB, h1: ${hasH1})`);
+      console.log(`${hasH1 ? "OK " : "!! "}${route.padEnd(12)} -> ${path.relative(OUT, outFile)} (${(html.length / 1024).toFixed(1)} KB, h1: ${hasH1})`);
 
       await page.close();
     }
